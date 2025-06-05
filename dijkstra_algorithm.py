@@ -1,3 +1,4 @@
+#Setting up graph
 graph={}
 graph['start']={}
 graph['start']["a"]={}
@@ -26,7 +27,7 @@ graph['f']['fin']=2
 
 
 infinity = float("inf")
-
+#setting up costs of nodes
 costs={}
 costs['a']=1
 costs['b']=3
@@ -35,6 +36,7 @@ costs['d']=infinity
 costs['e']=infinity
 costs['f']=infinity
 
+#setting up the parent
 parents={}
 parents['a']="start"
 parents['b']="start"
@@ -44,9 +46,10 @@ parents['e']=None
 parents['f']=None
 parents['fin']=None
 
+#Recording already visited node
 processed=[]
 
-
+#finding the lowest cost node
 def find_lowest_node(cost,processed):
     keys = list(cost.keys())
     values = list(cost.values())
@@ -64,7 +67,7 @@ def find_lowest_node(cost,processed):
     
 node = find_lowest_node(costs,processed)
 
-
+#Algorithm
 while node is not None:
     cost=costs[node]
     
